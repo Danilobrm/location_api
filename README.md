@@ -21,7 +21,6 @@ $ docker-compose up --build
 request body
 
 {
-"username": "john_doe",
 "password": "password123",
 "email": "john.doe@example.com"
 }
