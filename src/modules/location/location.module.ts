@@ -21,6 +21,6 @@ export class LocationModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(isAuthenticated)
-      .forRoutes({ path: 'location/*', method: RequestMethod.ALL });
+      .forRoutes({ path: 'location/*', method: RequestMethod.ALL }, { path: 'location', method: RequestMethod.GET });
   }
 }
