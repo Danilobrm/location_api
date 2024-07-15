@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { User } from '../../../domain/entities/user.entity';
 import { PrismaClient } from '@prisma/client';
+import { AppError } from 'src/common/errors/AppError';
 
 @Injectable()
 export class UserRepositoryService {
@@ -10,15 +11,13 @@ export class UserRepositoryService {
     try {
       const createdUser = await this.prisma.user.create({
         data: {
-          username: user.username,
-          password: user.password,
           email: user.email,
+          password: user.password,
         },
       });
       return createdUser;
     } catch (error) {
-      // console.log(error.meta.target);
-      console.log(error);
+      throw new AppError(error.meta.cause);
     }
   }
 
