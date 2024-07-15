@@ -18,13 +18,14 @@ $ docker-compose up --build
 
 - registrar - POST /user/register
 
-# request body
+request body
 
 {
 "username": "john_doe",
 "password": "password123",
 "email": "john.doe@example.com"
 }
+
 
 - login - POST /login
 
@@ -34,6 +35,7 @@ request body
 "password": "password123",
 "email": "john.doe@example.com"
 }
+
 
 - criar localização - POST /location/create
 
@@ -45,6 +47,7 @@ request body
 "state": "Anystate"
 }
 
+
 - editar localização - PATCH /location/edit/:id
 
 request body
@@ -55,12 +58,16 @@ request body
 "state": "Anystate"
 }
 
+
 - deletar localização - DELETE /location/:id
+
 
 - pegar localização por id - GET /location/:id
 
+
 - pegar localização por nome - GET /location?name=name
   // se não por passado a query, irá retornar todas as localizações
+
 
 ## Como usar
 
