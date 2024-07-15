@@ -23,7 +23,8 @@ COPY prisma ./prisma
 
 COPY .env ./
 
-RUN npx prisma generate --schema=./prisma/schema.prisma
+RUN npm run prisma:generate
+# RUN npm run prisma:deploy
 
 COPY --from=builder /app/dist ./dist
 

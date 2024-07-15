@@ -9,7 +9,18 @@ datasource db {
 
 model User {
   id       String   @id @default(uuid())
-  // username String   @unique
   password String
   email    String   @unique
+  locations Location[]
+}
+
+model Location {
+  id        String   @id @default(uuid())
+  name      String
+  city      String  
+  state     String  
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  user_id    String   
+  user      User      @relation(fields: [user_id], references: [id])
 }
