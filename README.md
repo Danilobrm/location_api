@@ -7,6 +7,8 @@ $ git clone https://github.com/Danilobrm/location_api.git
 $ npm install
 ```
 
+**dentro do arquivo .env adicione JWT_SECRET=sua_chave_jwt (coloque uma chave de criptografia para o jsonwebtoken gerar um token de acesso baseado na sua chave)
+
 ## Executando a API
 
 ```bash
